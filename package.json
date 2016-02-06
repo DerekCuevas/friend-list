@@ -1,10 +1,10 @@
 {
-  "name": "redux-react-router-example",
+  "name": "friend-list",
   "version": "0.0.1",
   "description": "A non-trivial redux, react, react-router example.",
-  "main": "index.js",
+  "main": "app/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack --config webpack.config.dev.js"
   },
   "author": "Derek Cuevas",
   "license": "MIT",
@@ -20,6 +20,7 @@
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^5.0.0",
     "eslint-plugin-react": "^3.16.1",
-    "webpack": "^1.12.13"
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
   }
 }
