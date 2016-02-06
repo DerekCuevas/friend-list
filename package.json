@@ -4,7 +4,12 @@
   "description": "A non-trivial redux, react, react-router example.",
   "main": "app/index.js",
   "scripts": {
-    "start": "webpack --config webpack.config.dev.js"
+    "clean": "rimraf static",
+    "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build": "npm run clean && npm run build:webpack",
+    "start": "npm run build && NODE_ENV=production node server.js",
+    "dev": "NODE_ENV=development node server.js",
+    "lint": "eslint app"
   },
   "author": "Derek Cuevas",
   "license": "MIT",
@@ -27,6 +32,7 @@
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^5.0.0",
     "eslint-plugin-react": "^3.16.1",
+    "rimraf": "^2.5.1",
     "webpack": "^1.12.13",
     "webpack-dev-middleware": "^1.5.1",
     "webpack-dev-server": "^1.14.1",

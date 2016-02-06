@@ -1,11 +1,24 @@
 const express = require('express');
 const path = require('path');
 const chalk = require('chalk');
+const webpack = require('webpack');
+const config = require('./webpack.config.dev');
 
 const app = express();
+const compiler = webpack(config);
+
+if (app.settings.env === 'production') {
+  app.use(express.static(path.join(__dirname, './static')));
+} else {
+  app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath,
+  }));
+
+  app.use(require('webpack-hot-middleware')(compiler));
+}
 
 app.set('port', process.env.PORT || 3000);
-app.use(express.static(path.join(__dirname, './static')));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'app/index.html'));
