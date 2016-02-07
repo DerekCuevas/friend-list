@@ -36,6 +36,7 @@
     "eslint-plugin-react": "^3.16.1",
     "less": "^2.6.0",
     "less-loader": "^2.2.2",
+    "redux-logger": "^2.5.0",
     "rimraf": "^2.5.1",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.13",
