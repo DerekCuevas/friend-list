@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { setQuery } from '../actions';
+import { setQuery, fetchFriends } from '../actions';
 
 import SearchInput from '../components/SearchInput';
 import FriendList from '../components/FriendList';
@@ -25,7 +25,9 @@ class App extends Component {
 
   handleSearch(value) {
     const { dispatch } = this.props;
+
     dispatch(setQuery(value));
+    dispatch(fetchFriends());
   }
 
   render() {
