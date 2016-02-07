@@ -4,7 +4,6 @@ const ENTER_KEYCODE = 13;
 
 const propTypes = {
   value: PropTypes.string,
-  isFetching: PropTypes.bool,
   debounce: PropTypes.number,
   handleSearch: PropTypes.func.isRequired,
 };
@@ -66,41 +65,18 @@ class SearchInput extends Component {
     }
   }
 
-  renderInput() {
-    return (
-      <input
-        {...this.props}
-        ref="searchInput"
-        value={this.state.value}
-        onChange={this.handleValueChange}
-        onKeyDown={this.handleEnterKeyDown}
-        id="search-input"
-        type="search"
-      />
-    );
-  }
-
-  renderInputGlyphicon(isFetching) {
-    if (isFetching) {
-      return (
-        <span className="search form-control-feedback">
-          <i className="fa fa-spinner fa-pulse" />
-        </span>
-      );
-    }
-    return (
-      <span
-        className="search glyphicon glyphicon-search form-control-feedback"
-        aria-hidden="true"
-      />
-    );
-  }
-
   render() {
     return (
       <div className="form-group has-feedback">
-        {this.renderInput()}
-        {this.renderInputGlyphicon(this.props.isFetching)}
+        <input
+          {...this.props}
+          ref="searchInput"
+          value={this.state.value}
+          onChange={this.handleValueChange}
+          onKeyDown={this.handleEnterKeyDown}
+          id="search-input"
+          type="search"
+        />
       </div>
     );
   }
