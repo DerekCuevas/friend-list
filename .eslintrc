@@ -1,6 +1,9 @@
 {
-    "extends": "airbnb",
-    "ecmaFeatures": {
-        "restParams": true
-    }
+  "extends": "airbnb",
+  "rules": {
+    "no-console": 0
+  },
+  "ecmaFeatures": {
+    "restParams": true
+  }
 }

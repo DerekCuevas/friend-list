@@ -1,5 +1,14 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 
-const App = ({ name }) => <div>Hi, {name}!</div>;
+const propTypes = {
+  name: PropTypes.string,
+};
 
+class App extends Component {
+  render() {
+    return <div>Hello, {this.props.name}!</div>;
+  }
+}
+
+App.propTypes = propTypes;
 export default App;

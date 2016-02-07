@@ -5,6 +5,7 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client',
+    './app/less/style.less',
     './app/index',
   ],
   output: {
@@ -21,6 +22,9 @@ module.exports = {
       test: /\.jsx?/,
       loaders: ['babel'],
       include: path.join(__dirname, 'app'),
+    }, {
+      test: /\.less$/,
+      loader: 'style!css!autoprefixer!less',
     }],
   },
 };

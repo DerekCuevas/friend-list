@@ -4,6 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   devtool: 'source-map',
   entry: [
+    './app/less/style.less',
     './app/index',
   ],
   output: {
@@ -29,6 +30,9 @@ module.exports = {
       test: /\.js$/,
       loaders: ['babel'],
       include: path.join(__dirname, 'app'),
+    }, {
+      test: /\.less$/,
+      loader: 'style!css!autoprefixer!less',
     }],
   },
 };
