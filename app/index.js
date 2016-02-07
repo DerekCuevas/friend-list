@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-const Greeting = ({ name }) => <div>Hello, {name}!</div>;
+import App from './containers/App';
 
 ReactDOM.render(
-  <Greeting name="Derek" />,
+  <App name="World" />,
   document.getElementById('root')
 );

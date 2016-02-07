@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.4.5",
+    "babel-eslint": "^4.1.8",
     "babel-loader": "^6.2.2",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
@@ -35,7 +36,6 @@
     "rimraf": "^2.5.1",
     "webpack": "^1.12.13",
     "webpack-dev-middleware": "^1.5.1",
-    "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "^2.6.4"
   }
 }

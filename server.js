@@ -14,14 +14,13 @@ if (app.settings.env === 'production') {
     noInfo: true,
     publicPath: config.output.publicPath,
   }));
-
   app.use(require('webpack-hot-middleware')(compiler));
 }
 
 app.set('port', process.env.PORT || 3000);
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'app/index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.use((req, res) => {
