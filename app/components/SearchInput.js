@@ -67,17 +67,15 @@ class SearchInput extends Component {
 
   render() {
     return (
-      <div className="form-group has-feedback">
-        <input
-          {...this.props}
-          ref="searchInput"
-          value={this.state.value}
-          onChange={this.handleValueChange}
-          onKeyDown={this.handleEnterKeyDown}
-          id="search-input"
-          type="search"
-        />
-      </div>
+      <input
+        {...this.props}
+        ref="searchInput"
+        value={this.state.value}
+        onChange={this.handleValueChange}
+        onKeyDown={this.handleEnterKeyDown}
+        id="search-input"
+        type="search"
+      />
     );
   }
 }

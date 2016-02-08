@@ -23,6 +23,11 @@ class App extends Component {
     this.handleSearch = this.handleSearch.bind(this);
   }
 
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(fetchFriends());
+  }
+
   handleSearch(value) {
     const { dispatch } = this.props;
 
