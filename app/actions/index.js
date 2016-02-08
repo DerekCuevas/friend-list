@@ -9,12 +9,15 @@ export function setFriends(friends = []) {
   return { type: types.SET_FRIENDS, friends };
 }
 
-export function fetchFriends() {
+export function fetchFriends(callback) {
   return (dispatch, getState) => {
     const { query } = getState();
 
     search(query, friends => {
       dispatch(setFriends(friends));
+      if (callback) {
+        callback();
+      }
     });
   };
 }
