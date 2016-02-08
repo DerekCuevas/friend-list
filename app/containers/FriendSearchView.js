@@ -25,7 +25,11 @@ const contextTypes = {
 class FriendSearchView extends Component {
   constructor(props, context) {
     super(props, context);
+
+    this.syncUrl = this.syncUrl.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+
+    this.state = { syncing: false };
   }
 
   componentDidMount() {
@@ -33,7 +37,7 @@ class FriendSearchView extends Component {
   }
 
   componentWillReceiveProps({ location }) {
-    if (location.search !== this.props.location.search) {
+    if (!this.state.syncing && location.search !== this.props.location.search) {
       this.fetchFromLocation(location);
     }
   }
@@ -45,14 +49,22 @@ class FriendSearchView extends Component {
     dispatch(fetchFriends());
   }
 
+  syncUrl() {
+    const { query: q } = this.props;
+    this.context.router.push({
+      query: { q: q || undefined },
+    });
+  }
+
   handleSearch(value) {
     const { dispatch } = this.props;
 
+    this.setState({ syncing: true });
+
     dispatch(setQuery(value));
     dispatch(fetchFriends(() => {
-      this.context.router.push({
-        query: { q: value || undefined },
-      });
+      this.syncUrl();
+      this.setState({ syncing: false });
     }));
   }
 
