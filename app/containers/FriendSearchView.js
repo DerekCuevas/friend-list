@@ -18,26 +18,20 @@ const defaultProps = {
   friends: [],
 };
 
-const contextTypes = {
-  router: PropTypes.object.isRequired,
-};
-
 class FriendSearchView extends Component {
   constructor(props, context) {
     super(props, context);
-
-    this.syncUrl = this.syncUrl.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
-
-    this.state = { syncing: false };
   }
 
+  // fetch on page load
   componentDidMount() {
     this.fetchFromLocation(this.props.location);
   }
 
+  // needed to fetch on back/forward
   componentWillReceiveProps({ location }) {
-    if (!this.state.syncing && location.search !== this.props.location.search) {
+    if (location.action === 'POP' && (location.search !== this.props.location.search)) {
       this.fetchFromLocation(location);
     }
   }
@@ -49,23 +43,11 @@ class FriendSearchView extends Component {
     dispatch(fetchFriends());
   }
 
-  syncUrl() {
-    const { query: q } = this.props;
-    this.context.router.push({
-      query: { q: q || undefined },
-    });
-  }
-
   handleSearch(value) {
     const { dispatch } = this.props;
 
-    this.setState({ syncing: true });
-
     dispatch(setQuery(value));
-    dispatch(fetchFriends(() => {
-      this.syncUrl();
-      this.setState({ syncing: false });
-    }));
+    dispatch(fetchFriends());
   }
 
   render() {
@@ -87,6 +69,5 @@ class FriendSearchView extends Component {
 
 FriendSearchView.propTypes = propTypes;
 FriendSearchView.defaultProps = defaultProps;
-FriendSearchView.contextTypes = contextTypes;
 
 export default connect(state => state)(FriendSearchView);

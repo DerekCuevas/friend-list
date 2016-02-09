@@ -1,3 +1,4 @@
+import { browserHistory } from 'react-router';
 import * as types from '../constants/actionTypes';
 import search from '../api';
 
@@ -9,15 +10,15 @@ export function setFriends(friends = []) {
   return { type: types.SET_FRIENDS, friends };
 }
 
-export function fetchFriends(callback) {
+export function fetchFriends() {
   return (dispatch, getState) => {
     const { query } = getState();
 
     search(query, friends => {
       dispatch(setFriends(friends));
-      if (callback) {
-        callback();
-      }
+      browserHistory.push({
+        query: { q: query || undefined },
+      });
     });
   };
 }
