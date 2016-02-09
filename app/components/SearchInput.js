@@ -20,11 +20,11 @@ class SearchInput extends Component {
     this.handleValueChange = this.handleValueChange.bind(this);
     this.handleEnterKeyDown = this.handleEnterKeyDown.bind(this);
 
-    const { value, debounce } = this.props;
+    const { value } = this.props;
 
     this.state = {
       value,
-      debounce,
+      debounce: undefined,
     };
   }
 
@@ -35,16 +35,6 @@ class SearchInput extends Component {
         debounce: this.state.debounce,
       };
     }
-  }
-
-  inputSubmit(e) {
-    const value = e.target.value;
-
-    this.setState({
-      value,
-      debounce: undefined,
-    });
-    this.props.handleSearch(value);
   }
 
   handleValueChange(e) {
@@ -61,7 +51,7 @@ class SearchInput extends Component {
 
   handleEnterKeyDown(e) {
     if (e.keyCode === ENTER_KEYCODE) {
-      return this.inputSubmit(e);
+      this.props.handleSearch(e.target.value);
     }
   }
 
