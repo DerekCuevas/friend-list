@@ -14,8 +14,8 @@ class FriendList extends Component {
     const { friends } = this.props;
     return (
       <ul className="friend-list">
-        {friends.map((friend, index) => (
-          <li key={index}>
+        {friends.map(friend => (
+          <li key={friend.id}>
             <FriendThumbnail username={friend.username} name={friend.name} />
           </li>
         ))}

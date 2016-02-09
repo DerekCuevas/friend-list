@@ -6,9 +6,9 @@ export default function search(query, callback) {
     let keep = false;
 
     Object.keys(friend).forEach(key => {
-      const val = friend[key].toLowerCase();
+      const val = friend[key].toString();
 
-      if (val.includes(query.toLowerCase())) {
+      if (val.toLowerCase().includes(query.toLowerCase())) {
         keep = true;
       }
     });
