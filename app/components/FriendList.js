@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import FriendThumbnail from './FriendThumbnail';
 
 const propTypes = {
@@ -9,20 +9,15 @@ const defaultProps = {
   friends: [],
 };
 
-class FriendList extends Component {
-  render() {
-    const { friends } = this.props;
-    return (
-      <ul className="friend-list">
-        {friends.map(friend => (
-          <li key={friend.id}>
-            <FriendThumbnail username={friend.username} name={friend.name} />
-          </li>
-        ))}
-      </ul>
-    );
-  }
-}
+const FriendList = ({ friends }) => (
+  <ul className="friend-list">
+    {friends.map(friend => (
+      <li key={friend.id}>
+        <FriendThumbnail username={friend.username} name={friend.name} />
+      </li>
+    ))}
+  </ul>
+);
 
 FriendList.propTypes = propTypes;
 FriendList.defaultProps = defaultProps;
