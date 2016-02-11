@@ -30,8 +30,7 @@ class FriendSearchView extends Component {
     dispatch(setQuery(query.q));
   }
 
-  // needed to fetch on back/forward,
-  // I belive using history.listen(location => {...}) would work as well
+  // needed to set query on back/forward
   componentWillReceiveProps({ location }) {
     const { dispatch } = this.props;
 
