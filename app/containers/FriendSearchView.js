@@ -6,6 +6,8 @@ import { setQuery } from '../actions';
 import SearchInput from '../components/SearchInput';
 import FriendList from '../components/FriendList';
 
+const SEARCH_DEBOUNCE = 350;
+
 const propTypes = {
   dispatch: PropTypes.func.isRequired,
   location: PropTypes.object.isRequired,
@@ -52,7 +54,7 @@ class FriendSearchView extends Component {
         <SearchInput
           value={query}
           placeholder="Search friends..."
-          debounce={350}
+          debounce={SEARCH_DEBOUNCE}
           handleSearch={this.handleSearch}
         />
         <FriendList friends={friends} />
