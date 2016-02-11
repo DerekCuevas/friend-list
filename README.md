@@ -8,7 +8,7 @@ This problem is harder than it first appears, actions must be managed in the cor
 
 ## The Spec
 - Hit the API **once and only once** per query change (carefull here)
-- When the query updates -> update the URL (do this with the query param 'q')
+- When the query updates -> update the URL
 - When the URL updates -> update the query (ex. someone sends you a link)
 - The browser's back / forward buttons should keep the app state (query + results) in sync with the URL (this is a gotcha if not thought about carefully).
 - No optimizations (like cacheing previous queries) should be made, however the app should not be designed in a way that prevents this.
