@@ -10,7 +10,7 @@ import App from './containers/App';
 import FriendSearchView from './containers/FriendSearchView';
 
 const store = configureStore();
-let prevState;
+let prevState = undefined;
 
 store.subscribe(() => {
   const state = store.getState();

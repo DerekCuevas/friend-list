@@ -2,11 +2,14 @@ import React, { PropTypes } from 'react';
 import FriendThumbnail from './FriendThumbnail';
 
 const propTypes = {
-  friends: PropTypes.array,
+  friends: PropTypes.arrayOf(PropTypes.shape({
+    username: PropTypes.string,
+    name: PropTypes.string
+  }))
 };
 
 const defaultProps = {
-  friends: [],
+  friends: []
 };
 
 const FriendList = ({ friends }) => (

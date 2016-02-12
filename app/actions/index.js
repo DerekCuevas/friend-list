@@ -3,11 +3,17 @@ import * as types from '../constants/actionTypes';
 import search from '../api';
 
 export function setQuery(query = '') {
-  return { type: types.SET_QUERY, query };
+  return {
+    type: types.SET_QUERY,
+    query
+  };
 }
 
 export function setFriends(friends = []) {
-  return { type: types.SET_FRIENDS, friends };
+  return {
+    type: types.SET_FRIENDS,
+    friends
+  };
 }
 
 export function fetchFriends() {
@@ -17,7 +23,7 @@ export function fetchFriends() {
     search(query, friends => {
       dispatch(setFriends(friends));
       browserHistory.push({
-        query: { q: query || undefined },
+        query: { q: query || undefined }
       });
     });
   };

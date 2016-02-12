@@ -5,12 +5,12 @@ const ENTER_KEYCODE = 13;
 const propTypes = {
   value: PropTypes.string,
   debounce: PropTypes.number,
-  handleSearch: PropTypes.func.isRequired,
+  handleSearch: PropTypes.func.isRequired
 };
 
 const defaultProps = {
   value: '',
-  debounce: 0,
+  debounce: 0
 };
 
 class SearchInput extends Component {
@@ -24,7 +24,7 @@ class SearchInput extends Component {
 
     this.state = {
       value,
-      debounce: undefined,
+      debounce: undefined
     };
   }
 
@@ -32,7 +32,7 @@ class SearchInput extends Component {
     if (value !== this.props.value) {
       this.state = {
         value,
-        debounce: this.state.debounce,
+        debounce: this.state.debounce
       };
     }
   }
@@ -45,7 +45,7 @@ class SearchInput extends Component {
 
     this.setState({
       value,
-      debounce: setTimeout(() => handleSearch(value), debounce),
+      debounce: setTimeout(() => handleSearch(value), debounce)
     });
   }
 
@@ -59,7 +59,6 @@ class SearchInput extends Component {
     return (
       <input
         {...this.props}
-        ref="searchInput"
         value={this.state.value}
         onChange={this.handleValueChange}
         onKeyDown={this.handleEnterKeyDown}

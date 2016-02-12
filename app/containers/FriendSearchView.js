@@ -12,12 +12,12 @@ const propTypes = {
   dispatch: PropTypes.func.isRequired,
   location: PropTypes.object.isRequired,
   query: PropTypes.string,
-  friends: PropTypes.array,
+  friends: PropTypes.array
 };
 
 const defaultProps = {
   query: '',
-  friends: [],
+  friends: []
 };
 
 class FriendSearchView extends Component {
@@ -35,8 +35,9 @@ class FriendSearchView extends Component {
   // needed to set query on back/forward
   componentWillReceiveProps({ location }) {
     const { dispatch } = this.props;
+    const locationChanged = location.search !== this.props.location.search;
 
-    if (location.action === 'POP' && (location.search !== this.props.location.search)) {
+    if ((location.action === 'POP') && locationChanged) {
       dispatch(setQuery(location.query.q));
     }
   }

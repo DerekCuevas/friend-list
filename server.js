@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const compression = require('compression');
 const chalk = require('chalk');
 
 const webpack = require('webpack');
@@ -10,6 +11,8 @@ const config = require('./webpack.config.dev');
 
 const app = express();
 const compiler = webpack(config);
+
+app.use(compression());
 
 if (app.settings.env === 'production') {
   app.use(express.static(path.join(__dirname, './static'), {
