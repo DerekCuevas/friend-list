@@ -10,17 +10,20 @@ import App from './containers/App';
 import FriendSearchView from './containers/FriendSearchView';
 
 const store = configureStore();
-let prevState = undefined;
 
-store.subscribe(() => {
-  const state = store.getState();
+store.subscribe((() => {
+  let prevState = undefined;
 
-  if (!prevState || (prevState.query !== state.query)) {
-    store.dispatch(fetchFriends());
-  }
+  return () => {
+    const state = store.getState();
 
-  prevState = state;
-});
+    if (!prevState || (prevState.query !== state.query)) {
+      store.dispatch(fetchFriends());
+    }
+
+    prevState = state;
+  };
+})());
 
 ReactDOM.render(
   <Provider store={store}>
