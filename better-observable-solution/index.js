@@ -26,7 +26,7 @@ store.subscribe((() => {
 })());
 
 browserHistory.listen((() => {
-  let prevLocation = '';
+  let prevLocation = undefined;
 
   return location => {
     const locationChanged = location.search !== prevLocation.search;
