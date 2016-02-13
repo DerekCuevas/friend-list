@@ -16,20 +16,14 @@ This problem is harder than it first appears, actions must be managed in the cor
 ## Solutions
 Currently there are three solutions (each on separate branches of this repo).
 
-##### Imperative approach:
-(branch: imperative-solution)
+#### Imperative approach:
+Currently the most straightforward of the three, logic for dispatching actions and reading router state is all contained in react components. (branch: imperative-solution)
 
-Currently the most straightforward of the three, logic for dispatching actions and reading router state is all contained in react components.
+#### Part observable approach:
+Logic for dispatching side effects are managed with redux's store.subscribe() in an 'observable' like pattern. (branch: master)
 
-##### Part observable approach:
-(branch: master)
-
-Logic for dispatching side effects are managed with redux's store.subscribe() in an 'observable' like pattern.
-
-##### Full observable approach:
-(branch: with-history)
-
-Logic for both dispatching side effects to the store and reading router state are moved outside of react components. This example uses both redux's store.subscribe() and react-router's (history) browserHistory.listen() methods.
+#### Full observable approach:
+Logic for both dispatching side effects to the store and reading router state are moved outside of react components. This example uses both redux's store.subscribe() and react-router's (history) browserHistory.listen() methods. (branch: with-history)
 
 ## Highlights
 - vanilla redux + react-router, no third party bindings (like react-router-redux) (why is this a highlight?)
