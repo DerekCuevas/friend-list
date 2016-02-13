@@ -16,6 +16,6 @@ export default function search(query, callback) {
     return keep;
   });
 
-  // setting a more realistic timeout
-  setTimeout(() => callback(results), 150);
+  // setting a more realistic (random) timeout
+  setTimeout(() => callback(results), Math.ceil(Math.random() * 250));
 }
