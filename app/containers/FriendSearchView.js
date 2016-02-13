@@ -6,7 +6,7 @@ import { setQuery } from '../actions';
 import SearchInput from '../components/SearchInput';
 import FriendList from '../components/FriendList';
 
-const SEARCH_DEBOUNCE = 350;
+const SEARCH_DEBOUNCE = 0;
 
 const propTypes = {
   dispatch: PropTypes.func.isRequired,
@@ -67,4 +67,7 @@ class FriendSearchView extends Component {
 FriendSearchView.propTypes = propTypes;
 FriendSearchView.defaultProps = defaultProps;
 
-export default connect(state => state)(FriendSearchView);
+export default connect(({ query, friends }) => ({
+  query,
+  friends
+}))(FriendSearchView);
