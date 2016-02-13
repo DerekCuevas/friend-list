@@ -1,5 +1,5 @@
 # Friend List (this is a draft)
-A non-trivial (yet simple) redux + react-router example.
+A non-trivial (yet simple) redux + react-router example problem.
 
 ## The Problem
 Create an app with a dynamic, searchable list of data. Keep the search query in sync with the URL via a query parameter at all times. Assume the data will be fetched from some API and the API will perform the actual search. The query should be a simple string and kept in sync with the URL via a query parameter 'q' (ex. localhost:3000/?q=batman)
@@ -14,16 +14,16 @@ This problem is harder than it first appears, actions must be managed in the cor
 - No optimizations (like cacheing previous queries) should be made, however the app should not be designed in a way that prevents this.
 
 ## Solutions
-Currently there are three solutions (each on separate branches of this repo).
+Currently there are three solutions (each on separate subdirectories of this repo).
 
 #### Imperative approach:
-Currently the most straightforward of the three, logic for dispatching actions and reading router state is all contained in react components. (branch: imperative-solution)
+Currently the most straightforward of the three, logic for dispatching actions and reading router state is all contained in react components.
 
 #### Part "observable" approach:
-Logic for dispatching side effects are managed with redux's store.subscribe() in an 'observable' like pattern. (branch: master)
+Logic for dispatching side effects are managed with redux's store.subscribe() in an 'observable' like pattern.
 
 #### Better "observable" approach:
-Logic for both dispatching side effects to the store and reading router state are moved outside of react components. This example uses both redux's store.subscribe() and react-router's (history) browserHistory.listen() methods. (branch: with-history)
+Logic for both dispatching side effects to the store and reading router state are moved outside of react components. This example uses both redux's store.subscribe() and react-router's (history) browserHistory.listen() methods.
 
 #### Others
 Please send in a PR if you have a better solution.
