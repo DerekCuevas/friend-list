@@ -23,7 +23,7 @@ Currently the most straightforward of the three, logic for dispatching actions a
 This solution makes fetching results from the API (via dispatching the fetchFriends action) a side effect of updating the query. Logic for dispatching these side effects are managed with redux's store.subscribe() in an 'observable' like pattern.
 
 #### Extended "observable" approach:
-Logic for both dispatching side effects to the store and reading router state are moved outside of react components. This example uses both redux's store.subscribe() and react-router's (history) browserHistory.listen() methods.
+This approach builds on the patterns used in the part "observable" approach in that dispatching side effects of updating the URL is managed with react-router's (history) browserHistory.listen() method.
 
 #### Others
 Please send in a PR if you have a better solution.
