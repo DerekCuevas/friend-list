@@ -1,4 +1,4 @@
-# Friend List (this is a draft)
+# Friend List
 A non-trivial (yet simple) redux + react-router example.
 
 ## The Problem
@@ -20,10 +20,10 @@ Currently there are three solutions (each in separate subdirectories of this rep
 Currently the most straightforward of the three, logic for dispatching actions and reading router state is all contained in react components. [/imperative-solution](https://github.com/DerekCuevas/friend-list/tree/master/imperative-solution)
 
 #### Part "observable" approach:
-This solution makes fetching results from the API (via dispatching the fetchFriends action) a side effect of updating the query. Logic for dispatching these side effects are managed with redux's store.subscribe() in an 'observable' like pattern. [/part-observable-solution](https://github.com/DerekCuevas/friend-list/tree/master/part-observable-solution)
+This solution makes fetching results from the API (via dispatching the fetchFriends action) a side effect of updating the query. Logic for dispatching these side effects are managed with redux's store.subscribe() (see [index.js](https://github.com/DerekCuevas/friend-list/blob/master/part-observable-solution/index.js#L14)) in an 'observable' like pattern. [/part-observable-solution](https://github.com/DerekCuevas/friend-list/tree/master/part-observable-solution)
 
 #### Extended "observable" approach:
-This approach builds on the patterns used in the part "observable" approach. Dispatching side effects of updating the URL (updating the query) are managed with react-router's (history's) browserHistory.listen() method. [/better-observable-solution](https://github.com/DerekCuevas/friend-list/tree/master/better-observable-solution)
+This approach builds on the patterns used in the part "observable" approach. Dispatching side effects of updating the URL (updating the query) are managed with react-router's (history's) browserHistory.listen() method. (see [index.js](https://github.com/DerekCuevas/friend-list/blob/master/better-observable-solution/index.js#L28)) [/better-observable-solution](https://github.com/DerekCuevas/friend-list/tree/master/better-observable-solution)
 
 #### Others
 Please send in a pull request if you have a better solution.
@@ -42,12 +42,3 @@ cd friend-list/imperative-solution/ # or the others
 npm install
 npm start
 ```
-
-<!--
-## Highlights
-- vanilla redux + react-router, no third party bindings (like react-router-redux) (why is this a highlight?)
-- managing side effect's with redux's store.subscribe()
-- dispatching outside of react components
-- pushing all other side effects (hitting the API, updating the URL) to action creators
-- use of history's 'location descriptor object'
--->
