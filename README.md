@@ -1,7 +1,7 @@
 # Friend List
 A non-trivial (yet simple) redux + react-router example.
 
-![alt tag](friend-list.gif)
+![alt tag](friendlist.gif)
 
 ## The Problem
 Create an app with a dynamic and searchable list of data that keeps a search input text query in sync with the URL via a query parameter at all times. Assume the data will be fetched from some API and the API will perform the actual search. The query should be a simple string and kept in sync with the URL via a query parameter 'q' (ex. localhost:3000/?q=batman).
