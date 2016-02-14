@@ -7,14 +7,14 @@ Create an app with a dynamic and searchable list of data that keeps a search inp
 This problem is harder than it first appears, actions must be managed in the correct order, and if not can result in infinite loops and other undesirable behavior.
 
 ## The Spec
-- Hit the API **once and only once** per query change
-- When the query updates -> update the URL and fetch results from the API
-- When the URL updates -> update the query and fetch results from the API
+- Hit the API **once and only once** per query change.
+- When the query updates -> update the URL and fetch results from the API.
+- When the URL updates -> update the query and fetch results from the API.
 - The browser's back / forward buttons should keep the app state (query + results) in sync with the URL (this is a gotcha if not thought about carefully).
 - No optimizations (like cacheing previous queries) should be made, however the app should not be designed in a way that prevents this.
 
 ## Solutions
-Currently there are three solutions (each in separate subdirectories of this repo).
+Currently there are three solutions (each in separate subdirectories of this repo). Each of the three examples have similar structure, refer to /index.js and /containers/FriendSearchView.js for differences in the approaches.
 
 #### Imperative approach:
 Currently the most straightforward of the three, logic for dispatching actions and reading router state is all contained in react components.
@@ -26,7 +26,7 @@ This solution makes fetching results from the API (via dispatching the fetchFrie
 This approach builds on the patterns used in the part "observable" approach. Dispatching side effect's of updating the URL (updating the query) are managed with react-router's (history's) browserHistory.listen() method.
 
 #### Others
-Please send in a PR if you have a better solution.
+Please send in a pull request if you have a better solution.
 
 <!--
 ## Highlights
