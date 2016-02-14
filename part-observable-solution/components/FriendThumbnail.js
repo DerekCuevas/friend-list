@@ -7,9 +7,7 @@ const propTypes = {
 
 const FriendThumbnail = ({ name, username }) => (
   <div className="friend-thumbnail">
-    <span>{`Username: ${username}`}</span>
-    <br />
-    <span>{`Name: ${name}`}</span>
+    <h4>{name} <span className="username">{username}</span></h4>
   </div>
 );
 
