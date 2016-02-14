@@ -28,7 +28,7 @@ This approach builds on the patterns used in the part "observable" approach. Dis
 #### Others
 Please send in a pull request if you have a better solution.
 
-## To run the Examples
+## To run the solutions
 First clone the repo.
 
 ```sh
@@ -38,7 +38,7 @@ git clone https://github.com/DerekCuevas/friend-list.git
 Then cd into an example, 'npm install' and 'npm start' to get going.
 
 ```sh
-cd imperative-solution/ # or the Others
+cd friend-list/imperative-solution/ # or the others
 npm install
 npm start
 ```
