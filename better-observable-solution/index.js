@@ -39,6 +39,7 @@ browserHistory.listen((() => {
   };
 })());
 
+// NOTE: react-router is not really needed for this example...
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>

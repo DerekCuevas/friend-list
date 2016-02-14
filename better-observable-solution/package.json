@@ -4,9 +4,7 @@
   "description": "A non-trivial redux, react, react-router example.",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf static",
-    "start": "node server.js",
-    "lint": "eslint app"
+    "start": "node server.js"
   },
   "author": "Derek Cuevas",
   "license": "MIT",

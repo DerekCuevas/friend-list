@@ -8,7 +8,6 @@ import FriendList from '../components/FriendList';
 
 const propTypes = {
   dispatch: PropTypes.func.isRequired,
-  location: PropTypes.object.isRequired,
   query: PropTypes.string,
   friends: PropTypes.array
 };
