@@ -19,13 +19,13 @@ This problem is harder than it first appears, actions must be managed in the cor
 Currently there are three solutions (each in separate subdirectories of this repo). Each of the three examples have similar structure, refer to /index.js and /containers/FriendSearchView.js for the differences in the approaches.
 
 #### Imperative approach:
-Currently the most straightforward of the three, logic for dispatching actions and reading router state is all contained in react components. [/imperative-solution](https://github.com/DerekCuevas/friend-list/tree/master/imperative-solution)
+Currently the most straightforward of the three, logic for dispatching actions and reading router state is all contained in react components. [/imperative-solution](imperative-solution/)
 
 #### Part "observable" approach:
-This solution makes fetching results from the API (via dispatching the fetchFriends action) a side effect of updating the query. Logic for dispatching these side effects are managed with redux's store.subscribe() (see [index.js](https://github.com/DerekCuevas/friend-list/blob/master/part-observable-solution/index.js#L14)) in an 'observable' like pattern. [/part-observable-solution](https://github.com/DerekCuevas/friend-list/tree/master/part-observable-solution)
+This solution makes fetching results from the API (via dispatching the fetchFriends action) a side effect of updating the query. Logic for dispatching these side effects are managed with redux's store.subscribe() (see [index.js](part-observable-solution/index.js#L14)) in an 'observable' like pattern. [/part-observable-solution](part-observable-solution/)
 
 #### Extended "observable" approach:
-This approach builds on the patterns used in the part "observable" approach. Dispatching side effects of updating the URL (updating the query) are managed with react-router's (history's) browserHistory.listen() method. (see [index.js](https://github.com/DerekCuevas/friend-list/blob/master/better-observable-solution/index.js#L28)) [/better-observable-solution](https://github.com/DerekCuevas/friend-list/tree/master/better-observable-solution)
+This approach builds on the patterns used in the part "observable" approach. Dispatching side effects of updating the URL (updating the query) are managed with react-router's (history's) browserHistory.listen() method. (see [index.js](better-observable-solution/index.js#L28)) [/better-observable-solution](better-observable-solution/)
 
 #### Others
 Please send in a pull request if you have a better solution.

@@ -20,11 +20,12 @@ export function fetchFriends() {
   return (dispatch, getState) => {
     const { query } = getState();
 
+    browserHistory.push({
+      query: { q: query || undefined }
+    });
+
     search(query, friends => {
       dispatch(setFriends(friends));
-      browserHistory.push({
-        query: { q: query || undefined }
-      });
     });
   };
 }
