@@ -16,7 +16,7 @@ This problem is harder than it first appears, actions must be managed in the cor
 - No optimizations (like cacheing previous queries) should be made, however the app should not be designed in a way that prevents this.
 
 ## Solutions
-Currently there are three solutions (each in their own directories).
+Currently there are three solutions (each in their own subdirectories - see explanations below).
 
 Each of the three have similar structure (identical store state + hitting the same mock API). The differences being when and where the app reads router state and when and where the app dispatches actions.
 
@@ -36,6 +36,8 @@ cd friend-list/imperative-solution/ # or the others
 npm install
 npm start
 ```
+
+### The solutions
 
 #### Basic approach:
 Currently the most straightforward of the three, logic for dispatching actions and reading router state is all contained in react components. (full solution - [/imperative-solution](imperative-solution/))
