@@ -3,8 +3,9 @@ import FriendThumbnail from './FriendThumbnail';
 
 const propTypes = {
   friends: PropTypes.arrayOf(PropTypes.shape({
-    username: PropTypes.string,
-    name: PropTypes.string
+    id: PropTypes.number.isRequired,
+    username: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
   }))
 };
 
