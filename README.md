@@ -8,10 +8,6 @@ Create an app with a dynamic and searchable list of data that keeps a search inp
 
 This problem is harder than it first appears, actions must be managed in the correct order, and if not can result in infinite loops and other undesirable behavior.
 
-<!--
-This problem is harder than it first appears, actions must be managed in the correct order. If they are not this can result in infinite loops and other undesirable behavior.
--->
-
 ## The Spec
 - Hit the API **once and only once** per query change.
 - When the query updates -> update the URL and fetch results from the API.
@@ -20,9 +16,9 @@ This problem is harder than it first appears, actions must be managed in the cor
 - No optimizations (like cacheing previous queries) should be made, however the app should not be designed in a way that prevents this.
 
 ## Solutions
-Currently there are three solutions (each in their own subdirectories). Check out the README files in each of the subdirectories for example specific details.
+Currently there are three solutions (each in their own subdirectories, see above). Check out the README files in each of the subdirectories for example specific details.
 
-Each of the three have similar structures (identical store state + hitting the same mock API). The difference being when and where the app reads router state and when and where the app dispatches actions.
+Each of the three have similar structures (identical store state + hitting the same mock API). The difference being when and where the apps reads router state and when and where the apps dispatches actions.
 
 Refer to \*/index.js and \*/containers/FriendSearchView.js for differences in the approaches.
 
