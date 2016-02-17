@@ -18,7 +18,7 @@ This problem is harder than it first appears, actions must be managed in the cor
 ## Solutions
 Currently there are three solutions (each in their own subdirectories, see above). Check out the README files in each of the subdirectories for example specific details.
 
-Each of the three have similar structures (identical store state + hitting the same mock API). The difference being when and where the apps reads router state and when and where the apps dispatches actions.
+Each of the three have similar structures (identical store state + hitting the same mock API). The difference being when and where the apps read router state and when and where the apps dispatch actions.
 
 Refer to \*/index.js and \*/containers/FriendSearchView.js for differences in the approaches.
 
