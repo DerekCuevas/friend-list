@@ -18,7 +18,7 @@ const defaultProps = {
   friends: []
 };
 
-const FriendSearchView = ({ query, friends, handleSearch}) => (
+const FriendSearchView = ({ query, friends, handleSearch }) => (
   <div className="app">
     <SearchInput
       value={query}
