@@ -25,7 +25,7 @@ after 100ms.
 
 Finally, the example feature Saga monitoring using a slightly modified version of the sagaMonitor example
 from the project examples repository. The monitor code can be found in the [`sagaMonitor/index`](sagaMonitor/index.js) module. You can
-print a log of the Sagas activity by typing `$$LogSagas` into the console.
+print a log of the Sagas activity by typing `$$LogSagas()` into the console.
 
 Like in the `better-observable` solution. URL changes are managed with react-router's (history's) browserHistory.listen() method
 
