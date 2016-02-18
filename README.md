@@ -14,13 +14,12 @@ This problem is harder than it first appears, actions must be managed in the cor
 - When the URL updates -> update the query and fetch results from the API.
 - The browser's back / forward buttons should keep the app state (query + results) in sync with the URL (this is a gotcha if not thought about carefully).
 - No optimizations (like caching previous queries) should be made, however the app should not be designed in a way that prevents this.
+- **As a bonus** handle the concurrent actions issue ([see the redux-saga-solution](redux-saga-solution/)) - "If the user changes the query input while there is still a pending request from a previous query change, the current pending request is cancelled and a new request should be made."
 
 ## Solutions
-Currently there are three solutions (each in their own subdirectories, see above). Check out the README files in each of the subdirectories for example specific details.
+Solutions are in their own subdirectories above. Check out the README files in each of the subdirectories for example specific details.
 
-Each of the three have similar structures (identical store state + hitting the same mock API). The difference being when and where the apps read router state and when and where the apps dispatch actions.
-
-Refer to \*/index.js and \*/containers/FriendSearchView.js for differences in the approaches.
+Many have similar structures (identical store state + hitting the same mock API). The difference being when and where the apps read router state and when and where the apps dispatch actions.
 
 ### To run
 First clone the repo.
