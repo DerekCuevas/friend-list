@@ -1,5 +1,5 @@
 # Friend List
-A non-trivial (yet simple) redux + react-router example.
+A non-trivial (yet simple) redux + react-router example problem.
 
 ![alt tag](friendlist.gif)
 
