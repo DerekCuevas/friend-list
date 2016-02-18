@@ -13,7 +13,7 @@ This problem is harder than it first appears, actions must be managed in the cor
 - When the query updates -> update the URL and fetch results from the API.
 - When the URL updates -> update the query and fetch results from the API.
 - The browser's back / forward buttons should keep the app state (query + results) in sync with the URL (this is a gotcha if not thought about carefully).
-- No optimizations (like cacheing previous queries) should be made, however the app should not be designed in a way that prevents this.
+- No optimizations (like caching previous queries) should be made, however the app should not be designed in a way that prevents this.
 
 ## Solutions
 Currently there are three solutions (each in their own subdirectories, see above). Check out the README files in each of the subdirectories for example specific details.
