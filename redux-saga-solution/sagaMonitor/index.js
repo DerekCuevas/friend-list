@@ -265,7 +265,10 @@ function logResult({status, result, error, duration}, formatter, ignoreResult) {
     if(isAutoCancel(error))
       return
 
-    formatter.appendData('→ ⚠', error)
+    if(isManualCancel(error))
+      formatter.appendData('→ ⚠', 'Cancelled!')
+    else
+      formatter.appendData('→ ⚠', error)
   }
 
   else if(status === PENDING)
@@ -276,7 +279,11 @@ function logResult({status, result, error, duration}, formatter, ignoreResult) {
 }
 
 function isAutoCancel(error) {
-  return error instanceof SagaCancellationException && error.type != MANUAL_CANCEL
+  return error instanceof SagaCancellationException && error.type !== MANUAL_CANCEL
+}
+
+function isManualCancel(error) {
+  return error instanceof SagaCancellationException && error.type === MANUAL_CANCEL
 }
 
 function isPrimitive(val) {
