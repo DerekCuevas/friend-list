@@ -25,19 +25,11 @@ store.subscribe((() => {
   };
 })());
 
-browserHistory.listen((() => {
-  let prevLocation = {};
-
-  return location => {
-    const locationChanged = location.search !== prevLocation.search;
-
-    if ((location.action === 'POP') && locationChanged) {
-      store.dispatch(setQuery(location.query.q));
-    }
-
-    prevLocation = location;
-  };
-})());
+browserHistory.listen(location => {
+  if (location.action === 'POP') {
+    store.dispatch(setQuery(location.query.q));
+  }
+});
 
 // NOTE: react-router is not really needed for this example...
 ReactDOM.render(

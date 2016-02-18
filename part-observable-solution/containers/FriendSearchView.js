@@ -33,9 +33,8 @@ class FriendSearchView extends Component {
   // needed to set query on back/forward
   componentWillReceiveProps({ location }) {
     const { dispatch } = this.props;
-    const locationChanged = location.search !== this.props.location.search;
 
-    if ((location.action === 'POP') && locationChanged) {
+    if (location.action === 'POP') {
       dispatch(setQuery(location.query.q));
     }
   }

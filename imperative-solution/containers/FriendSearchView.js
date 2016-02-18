@@ -31,9 +31,7 @@ class FriendSearchView extends Component {
 
   // needed to fetch on back/forward,
   componentWillReceiveProps({ location }) {
-    const locationChanged = location.search !== this.props.location.search;
-
-    if ((location.action === 'POP') && locationChanged) {
+    if (location.action === 'POP') {
       this.fetchFromLocation(location);
     }
   }
