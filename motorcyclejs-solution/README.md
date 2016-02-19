@@ -8,6 +8,7 @@ API.
 
 ### To run
 ```shell
+$ npm install
 $ npm start
 ```
 Open your browser to [http://localhost:3474](http://localhost:3474)
