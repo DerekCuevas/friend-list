@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rm -rf dist/ && mkdir dist/ && browserify -t babelify src/app.js -o dist/app.js",
     "server": "superstatic ./",
-    "start": "npm install && npm run build && npm run server",
+    "start": "npm run build && npm run server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tylor Steinberger <tlsteinberger167@gmail.com> (github.com/TylorS)",
