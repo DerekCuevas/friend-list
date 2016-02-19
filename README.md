@@ -39,6 +39,7 @@ npm start
 ## Contributors
 - [redux-saga-solution](redux-saga-solution/) - [@yelouafi](https://github.com/yelouafi)
 - [cyclejs-solution](cyclejs-solution/) - [@justinwoo](https://github.com/justinwoo)
+- [motorcyclejs-solution](motorcyclejs-solution/) - [@TylorS](https://github.com/TylorS)
 
 #### Have a better implementation?
 Please make an issue or send in a pull request.
