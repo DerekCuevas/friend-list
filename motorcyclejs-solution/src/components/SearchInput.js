@@ -15,7 +15,7 @@ function SearchInput({DOM, history}) {
     .map(evt => evt.target.value)
 
   return {
-    DOM: view(history.map(({query: {q}}) => q)),
+    DOM: view(history.map(({query: {q}}) => q ? q : '')),
     searchValue$,
   }
 }

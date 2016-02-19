@@ -22,7 +22,7 @@ function main(sources) {
 
   return {
     DOM: view$,
-    history: searchInput.searchValue$.map(q => ({query: {q}})),
+    history: searchInput.searchValue$.map(q => q === '' ? '/' : ({query: {q}})),
     fetch: sources.history.map(({query}) => query.q),
   }
 }
