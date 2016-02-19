@@ -1,0 +1,33 @@
+{
+  "name": "motorcyclejs-solution",
+  "version": "0.0.0",
+  "description": "A motorcyclejs solution to fried-list problem ",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf dist/ && mkdir dist/ && browserify -t babelify src/app.js -o dist/app.js",
+    "server": "superstatic ./",
+    "start": "npm install && npm run build && npm run server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tylor Steinberger <tlsteinberger167@gmail.com> (github.com/TylorS)",
+  "license": "MIT",
+  "dependencies": {
+    "@motorcycle/core": "^1.1.0",
+    "@motorcycle/dom": "^1.2.0",
+    "@motorcycle/history": "^2.0.0",
+    "history": "^2.0.0",
+    "most-subject": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^5.0.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "eslint": "^1.10.3",
+    "eslint-config-cycle": "^3.2.0",
+    "eslint-plugin-cycle": "^1.0.2",
+    "eslint-plugin-no-class": "^0.1.0",
+    "http-server": "^0.9.0",
+    "superstatic": "^4.0.1"
+  }
+}
