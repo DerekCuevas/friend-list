@@ -24,7 +24,7 @@ export function fetchFriends() {
       query: { q: query || undefined }
     });
 
-    search(query, friends => {
+    search(query).then(friends => {
       dispatch(setFriends(friends));
     });
   };

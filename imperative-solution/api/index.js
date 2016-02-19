@@ -1,7 +1,7 @@
 import friends from './friends';
 
 // mock api search
-export default function search(query, callback) {
+export default function search(query) {
   const results = friends.filter(friend => {
     let keep = false;
 
@@ -17,5 +17,7 @@ export default function search(query, callback) {
   });
 
   // setting a more realistic (random) timeout
-  setTimeout(() => callback(results), Math.ceil(Math.random() * 250));
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(results), Math.ceil(Math.random() * 250));
+  });
 }
