@@ -1,7 +1,9 @@
+import { Observable } from 'rx';
+
 import friends from './friends';
 
 // mock api search
-export default function search(query = '', callback) {
+export default function search(query = '') {
   const results = friends.filter(friend => {
     let keep = false;
 
@@ -16,6 +18,18 @@ export default function search(query = '', callback) {
     return keep;
   });
 
-  // setting a more realistic (random) timeout
-  setTimeout(() => callback(results), Math.ceil(Math.random() * 250));
+  // use an observable for our search API so that it's actually cancellable when we dispose of our subscription
+  return Observable.create(observer => {
+    const timeout = setTimeout(() => {
+      console.log(`RESOLVING search ${timeout}`);
+      observer.onNext(results)
+    }, Math.ceil(100 + Math.random() * 250)); // make delay longer to make cancellation more obvious
+
+    console.log(`STARTING search ${timeout}`);
+
+    return () => {
+      console.log(`DISPOSING search ${timeout}`);
+      clearTimeout(timeout)
+    };
+  });
 }
