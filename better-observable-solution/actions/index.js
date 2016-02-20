@@ -33,7 +33,7 @@ export function fetchFriends(history) {
       const { query: currentQuery } = getState();
 
       if (query !== currentQuery) {
-        // The disposing of responeses ensures a consistent state between
+        // The disposing of responses ensures a consistent state between
         // the current query and the current results.
         // This state can occur when responses arive in a different order than
         // they were requested.
