@@ -12,6 +12,7 @@
     "babel-polyfill": "^6.5.0",
     "express": "^4.13.4",
     "history": "^2.0.0",
+    "lodash.debounce": "^4.0.3",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redux": "^4.4.0",
