@@ -15,6 +15,11 @@ export function setFriends(friends = []) {
   };
 }
 
+// This thunk solves the concurrent actions issue by ignoring inconsistent
+// responses rather than cancelling requests.
+// Increase the timeout of the search api function to see more responses being
+// disposed. 'logs' are thrown around the search call here for demonstation
+// purposes.
 export function fetchFriends(history) {
   return (dispatch, getState) => {
     const { query } = getState();
@@ -23,7 +28,20 @@ export function fetchFriends(history) {
       query: { q: query || undefined }
     });
 
+    console.log(`Requesting - '${query}'`);
     search(query).then(friends => {
+      const { query: currentQuery } = getState();
+
+      if (query !== currentQuery) {
+        // The disposing of responeses ensures a consistent state between
+        // the current query and the current results.
+        // This state can occur when responses arive in a different order than
+        // they were requested.
+        console.log(`Disposing response - '${query}'`);
+        return;
+      }
+
+      console.log(`Resolving - '${query}'`);
       dispatch(setFriends(friends));
     });
   };
