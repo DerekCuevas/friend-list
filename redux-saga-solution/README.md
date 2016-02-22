@@ -18,6 +18,12 @@ The example handles the *concurrent actions* issue. If the user changes the quer
 still a pending request from a previous query change, the current pending request is cancelled and a new
 request is made. It means we always get the result of the latest request.
 
+Cancellation logic is attached to a request by defining a `CANCEL` method on the promise returned by the
+Api service `search` (see [`api/index.js`](api/index.js#L30-L33)).
+
+>Since the example debounces the api call by 100ms. You may need to increase the delay of the Api
+response ([see here](api/index.js#L27)) to make the cancellation more visible.
+
 The example also features *debouncing*. User input is denounced by 100ms : While `SET_QUERY`
 actions are dispatched normally, the fetch doesn't occur until the user has stopped typing
 after 100ms.
