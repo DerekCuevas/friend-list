@@ -14,7 +14,10 @@ This problem is harder than it first appears, actions must be managed in the cor
 - When the URL updates -> update the query and fetch results from the API.
 - The browser's back / forward buttons should keep the app state (query + results) in sync with the URL (this is a gotcha if not thought about carefully).
 - No optimizations (like caching previous queries) should be made, however the app should not be designed in a way that prevents this.
-- **As a bonus** handle the concurrent actions issue (see the [redux-saga-solution](redux-saga-solution/), the [cyclejs-solution](cyclejs-solution/), and the [better-observable-solution](better-observable-solution/)) - "If the user changes the query input while there is still a pending request from a previous query change, the current pending request should be cancelled and a new request should be made." - Thanks [@yelouafi](https://github.com/yelouafi)
+- **Bonus feature** - Handle the concurrent actions issue (see the [redux-saga-solution](redux-saga-solution/), the [cyclejs-solution](cyclejs-solution/), and the [better-observable-solution](better-observable-solution/)) - "If the user changes the query input while there is still a pending request from a previous query change, the current pending request should be cancelled and a new request should be made." - Thanks [@yelouafi](https://github.com/yelouafi)
+- **Bonus feature** - Debounce the fetching of results by 100ms.
+- **Bonus feature** - Log any state changing action, with the newly chaged state.
+- **Bonus feature** - Add loading and/or error states.
 
 ## Solutions
 Solutions are in their own subdirectories above. Check out the README files in each of the subdirectories for example specific details.
