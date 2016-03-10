@@ -16,7 +16,7 @@ This problem is harder than it first appears, actions must be managed in the cor
 - No optimizations (like caching previous queries) should be made, however the app should not be designed in a way that prevents this.
 - **Bonus feature** - Handle the concurrent actions issue (see the [redux-saga-solution](redux-saga-solution/), the [cyclejs-solution](cyclejs-solution/), and the [better-observable-solution](better-observable-solution/)) - "If the user changes the query input while there is still a pending request from a previous query change, the current pending request should be cancelled and a new request should be made." - Thanks [@yelouafi](https://github.com/yelouafi)
 - **Bonus feature** - Debounce the fetching of results by 100ms.
-- **Bonus feature** - Log any state changing action, with the newly chaged state.
+- **Bonus feature** - Log any state changing action with the newly changed state.
 - **Bonus feature** - Add loading and/or error states.
 
 ## Solutions
