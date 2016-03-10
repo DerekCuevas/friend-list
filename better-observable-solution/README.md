@@ -1,7 +1,7 @@
 # Better "observable" approach:
 This approach builds on the patterns used in the part "observable" approach, with significant simplifications being made to the react container components.
 
-Dispatching side effects of updating the URL are managed with [history's](https://github.com/mjackson/history) history.listen() method.
+Dispatching side effects of updating the URL (via the browser's back/forward buttons) are managed with [history's](https://github.com/mjackson/history) history.listen() method.
 
 ```javascript
 history.listen(location => {
@@ -14,7 +14,8 @@ history.listen(location => {
 
 The solution doesn't need react-router as none of the react components need to read router state. Compare this with the part-observable-solution's container component [FriendSearchView](../part-observable-solution/containers/FriendSearchView.js) where 'componentDidMount' and 'componentWillReceiveProps' are needed to implement query changes on route transitions.
 
-This solution also solves the bonus problem of handling the concurrent actions issue. It does so using [redux-thunk](https://github.com/gaearon/redux-thunk), however instead of cancelling requests the solution ignores responses that would put the store (query + results) in an inconsistent state.
+## Bonus Features
+This solution solves the bonus problem of handling the concurrent actions issue. It does so using [redux-thunk](https://github.com/gaearon/redux-thunk), however instead of cancelling requests the solution ignores responses that would put the store (query + results) in an inconsistent state.
 
 ```javascript
 export function fetchFriends(history) {
@@ -41,7 +42,9 @@ export function fetchFriends(history) {
 
 The disposing of responses ensures a consistent state between the current query and the current results. This state can occur when responses arrive in a different order than they were requested. (This is mocked by setting a random timeout in the mock api [search function](api/index.js#L22).)
 
-Finally, this solution also debounces fetching of friends from the mock API by 100ms. It does so by binding dispatch to the fetchFriends action.
+An is fetching state is added to the store, the friendList react component will show a loading state when isFetching === true. (see - [components/FriendList.js](components/FriendList.js))
+
+Finally, this solution debounces fetching of friends from the mock API by 100ms. It does so by binding dispatch to the fetchFriends action.
 
 ```javascript
 const fetch = debounce(

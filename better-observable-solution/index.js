@@ -16,7 +16,6 @@ const store = configureStore();
 store.subscribe((() => {
   let prevState = undefined;
 
-  // debouncing the fetch friends action by 100ms
   const fetch = debounce(
     store.dispatch.bind(undefined, fetchFriends(history)),
     100
