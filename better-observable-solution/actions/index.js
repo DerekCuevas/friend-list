@@ -30,15 +30,13 @@ export function fetchFriends(history) {
     search(query).then(friends => {
       const { query: currentQuery } = getState();
 
-      if (query !== currentQuery) {
-        return;
+      if (query === currentQuery) {
+        history.push({
+          query: { q: query || undefined }
+        });
+
+        dispatch(receiveFriends(friends));
       }
-
-      history.push({
-        query: { q: query || undefined }
-      });
-
-      dispatch(receiveFriends(friends));
     });
   };
 }
