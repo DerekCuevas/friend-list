@@ -3,8 +3,7 @@ import * as types from '../constants/actionTypes';
 const initialState = {
   isFetching: false,
   query: '',
-  friends: [],
-  error: undefined
+  friends: []
 };
 
 export default function friendListReducer(state = initialState, action) {
@@ -20,18 +19,10 @@ export default function friendListReducer(state = initialState, action) {
         isFetching: true
       });
 
-    case types.RECEIVE_FRIENDS_SUCCESS:
+    case types.RECEIVE_FRIENDS:
       return Object.assign({}, state, {
         isFetching: false,
-        friends: action.friends,
-        error: undefined
-      });
-
-    case types.RECEIVE_FRIENDS_FAILURE:
-      return Object.assign({}, state, {
-        isFetching: false,
-        friends: [],
-        error: action.error
+        friends: action.friends
       });
 
     default:

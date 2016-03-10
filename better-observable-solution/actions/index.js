@@ -14,16 +14,9 @@ export function requestFriends() {
   };
 }
 
-export function receiveFriends(error, friends = []) {
-  if (error) {
-    return {
-      type: types.RECEIVE_FRIENDS_FAILURE,
-      error
-    };
-  }
-
+export function receiveFriends(friends = []) {
   return {
-    type: types.RECEIVE_FRIENDS_SUCCESS,
+    type: types.RECEIVE_FRIENDS,
     friends
   };
 }
@@ -45,9 +38,7 @@ export function fetchFriends(history) {
         query: { q: query || undefined }
       });
 
-      dispatch(receiveFriends(false, friends));
-    }).catch(error => {
-      dispatch(receiveFriends(error));
+      dispatch(receiveFriends(friends));
     });
   };
 }
