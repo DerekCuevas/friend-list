@@ -8,8 +8,8 @@ const propTypes = {
 };
 
 class SearchInput extends Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
 
     this.handleValueChange = this.handleValueChange.bind(this);
     this.handleEnterKeyDown = this.handleEnterKeyDown.bind(this);

@@ -32,10 +32,6 @@ export function fetchFriends(history) {
   return (dispatch, getState) => {
     const { query } = getState();
 
-    history.push({
-      query: { q: query || undefined }
-    });
-
     dispatch(requestFriends());
 
     search(query).then(friends => {
@@ -44,6 +40,10 @@ export function fetchFriends(history) {
       if (query !== currentQuery) {
         return;
       }
+
+      history.push({
+        query: { q: query || undefined }
+      });
 
       dispatch(receiveFriends(false, friends));
     }).catch(error => {

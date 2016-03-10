@@ -9,32 +9,43 @@ import FriendList from '../components/FriendList';
 
 const propTypes = {
   handleSearch: PropTypes.func.isRequired,
+  isFetching: PropTypes.bool,
   query: PropTypes.string,
   friends: PropTypes.array
 };
 
 const defaultProps = {
+  isFetching: false,
   query: '',
   friends: []
 };
 
-const FriendSearchView = ({ query, friends, handleSearch }) => (
+const FriendSearchView = ({ isFetching, query, friends, handleSearch }) => (
   <div className="app">
     <SearchInput
       value={query}
       placeholder="Search friends..."
       handleSearch={handleSearch}
     />
-    <FriendList friends={friends} />
+    <FriendList isFetching={isFetching} friends={friends} />
   </div>
 );
 
 FriendSearchView.propTypes = propTypes;
 FriendSearchView.defaultProps = defaultProps;
 
-export default connect(({ query, friends }) => ({
-  query,
-  friends
-}), dispatch => ({
-  handleSearch: bindActionCreators(setQuery, dispatch)
-}))(FriendSearchView);
+function mapStateToProps({ isFetching, query, friends }) {
+  return {
+    isFetching,
+    query,
+    friends
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    handleSearch: bindActionCreators(setQuery, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FriendSearchView);
