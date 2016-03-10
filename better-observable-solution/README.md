@@ -42,7 +42,7 @@ export function fetchFriends(history) {
 
 The disposing of responses ensures a consistent state between the current query and the current results. This state can occur when responses arrive in a different order than they were requested. (This is mocked by setting a random timeout in the mock api [search function](api/index.js#L22).)
 
-An is fetching state is added to the store, the friendList react component will show a loading state when isFetching === true. (see - [components/FriendList.js](components/FriendList.js))
+Also, a loading state is added to the store. The friendList react component will show a loading state when isFetching === true. (see - [components/FriendList.js](components/FriendList.js))
 
 Finally, this solution debounces fetching of friends from the mock API by 100ms. It does so by binding dispatch to the fetchFriends action.
 
