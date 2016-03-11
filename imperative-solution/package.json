@@ -25,12 +25,7 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-preset-react-hmre": "^1.1.0",
-    "eslint": "^1.10.3",
-    "eslint-config-reactjs": "^1.0.0",
-    "eslint-plugin-objects": "^1.1.1",
-    "eslint-plugin-react": "^3.16.1",
     "redux-logger": "^2.5.0",
-    "rimraf": "^2.5.1",
     "webpack": "^1.12.13",
     "webpack-dev-middleware": "^1.5.1",
     "webpack-hot-middleware": "^2.6.4"
