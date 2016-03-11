@@ -29,7 +29,7 @@ export function fetchFriends(history) {
 
       if (query === currentQuery) {
         history.push({
-          query: { q: query || undefined }
+          query: { q: query || undefined },
         });
 
         dispatch(receiveFriends(friends));
