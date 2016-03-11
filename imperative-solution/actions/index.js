@@ -5,14 +5,14 @@ import search from '../api';
 export function setQuery(query = '') {
   return {
     type: types.SET_QUERY,
-    query
+    query,
   };
 }
 
 export function setFriends(friends = []) {
   return {
     type: types.SET_FRIENDS,
-    friends
+    friends,
   };
 }
 
@@ -21,7 +21,7 @@ export function fetchFriends() {
     const { query } = getState();
 
     browserHistory.push({
-      query: { q: query || undefined }
+      query: { q: query || undefined },
     });
 
     search(query).then(friends => {

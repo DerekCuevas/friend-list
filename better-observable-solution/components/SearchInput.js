@@ -1,43 +1,40 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 const ENTER_KEYCODE = 13;
 
 const propTypes = {
   value: PropTypes.string,
-  handleSearch: PropTypes.func.isRequired
+  handleSearch: PropTypes.func.isRequired,
 };
 
-class SearchInput extends Component {
-  constructor(props) {
-    super(props);
+const defaultProps = {
+  value: '',
+};
 
-    this.handleValueChange = this.handleValueChange.bind(this);
-    this.handleEnterKeyDown = this.handleEnterKeyDown.bind(this);
-  }
+const SearchInput = (props) => {
+  const { value, handleSearch } = props;
 
-  handleValueChange(e) {
-    this.props.handleSearch(e.target.value);
-  }
+  const onChange = (e) => handleSearch(e.target.value);
 
-  handleEnterKeyDown(e) {
+  const onKeyDown = (e) => {
     if (e.keyCode === ENTER_KEYCODE) {
-      this.props.handleSearch(e.target.value);
+      handleSearch(e.target.value);
     }
-  }
+  };
 
-  render() {
-    return (
-      <input
-        {...this.props}
-        value={this.props.value}
-        onChange={this.handleValueChange}
-        onKeyDown={this.handleEnterKeyDown}
-        id="search-input"
-        type="search"
-      />
-    );
-  }
-}
+  return (
+    <input
+      {...props}
+      value={value}
+      onChange={onChange}
+      onKeyDown={onKeyDown}
+      id="search-input"
+      type="search"
+    />
+  );
+};
 
 SearchInput.propTypes = propTypes;
+SearchInput.defaultProps = defaultProps;
+
 export default SearchInput;

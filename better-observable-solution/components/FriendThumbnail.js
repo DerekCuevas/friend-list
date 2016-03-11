@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 const propTypes = {
   name: PropTypes.string,
-  username: PropTypes.string
+  username: PropTypes.string,
 };
 
 const FriendThumbnail = ({ name, username }) => (

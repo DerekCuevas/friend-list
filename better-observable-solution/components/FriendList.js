@@ -6,13 +6,13 @@ const propTypes = {
   friends: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     username: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired
-  }))
+    name: PropTypes.string.isRequired,
+  })),
 };
 
 const defaultProps = {
   isFetching: false,
-  friends: []
+  friends: [],
 };
 
 const FriendList = ({ isFetching, friends }) => (

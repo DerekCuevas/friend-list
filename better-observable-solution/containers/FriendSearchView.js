@@ -11,13 +11,13 @@ const propTypes = {
   handleSearch: PropTypes.func.isRequired,
   isFetching: PropTypes.bool,
   query: PropTypes.string,
-  friends: PropTypes.array
+  friends: PropTypes.array,
 };
 
 const defaultProps = {
   isFetching: false,
   query: '',
-  friends: []
+  friends: [],
 };
 
 const FriendSearchView = ({ isFetching, query, friends, handleSearch }) => (
@@ -38,13 +38,13 @@ function mapStateToProps({ isFetching, query, friends }) {
   return {
     isFetching,
     query,
-    friends
+    friends,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    handleSearch: bindActionCreators(setQuery, dispatch)
+    handleSearch: bindActionCreators(setQuery, dispatch),
   };
 }
 

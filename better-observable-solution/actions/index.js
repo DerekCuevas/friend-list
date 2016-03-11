@@ -4,20 +4,20 @@ import search from '../api';
 export function setQuery(query = '') {
   return {
     type: types.SET_QUERY,
-    query
+    query,
   };
 }
 
 export function requestFriends() {
   return {
-    type: types.REQUEST_FRIENDS
+    type: types.REQUEST_FRIENDS,
   };
 }
 
 export function receiveFriends(friends = []) {
   return {
     type: types.RECEIVE_FRIENDS,
-    friends
+    friends,
   };
 }
 
@@ -32,7 +32,7 @@ export function fetchFriends(history) {
 
       if (query === currentQuery) {
         history.push({
-          query: { q: query || undefined }
+          query: { q: query || undefined },
         });
 
         dispatch(receiveFriends(friends));
