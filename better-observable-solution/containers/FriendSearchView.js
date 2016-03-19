@@ -20,26 +20,24 @@ const defaultProps = {
   friends: [],
 };
 
-const FriendSearchView = ({ isFetching, query, friends, handleSearch }) => (
-  <div className="app">
-    <SearchInput
-      value={query}
-      placeholder="Search friends..."
-      handleSearch={handleSearch}
-    />
-    <FriendList isFetching={isFetching} friends={friends} />
-  </div>
-);
+function FriendSearchView({ isFetching, query, friends, handleSearch }) {
+  return (
+    <div className="app">
+      <SearchInput
+        value={query}
+        placeholder="Search friends..."
+        handleSearch={handleSearch}
+      />
+      <FriendList isFetching={isFetching} friends={friends} />
+    </div>
+  );
+}
 
 FriendSearchView.propTypes = propTypes;
 FriendSearchView.defaultProps = defaultProps;
 
 function mapStateToProps({ isFetching, query, friends }) {
-  return {
-    isFetching,
-    query,
-    friends,
-  };
+  return { isFetching, query, friends };
 }
 
 function mapDispatchToProps(dispatch) {

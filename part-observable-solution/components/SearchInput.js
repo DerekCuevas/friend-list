@@ -11,7 +11,7 @@ const defaultProps = {
   value: '',
 };
 
-const SearchInput = (props) => {
+function SearchInput(props) {
   const { value, handleSearch } = props;
 
   const onChange = (e) => handleSearch(e.target.value);
@@ -31,7 +31,7 @@ const SearchInput = (props) => {
       type="search"
     />
   );
-};
+}
 
 SearchInput.propTypes = propTypes;
 SearchInput.defaultProps = defaultProps;
