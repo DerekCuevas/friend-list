@@ -12,11 +12,10 @@
   "author": "Tylor Steinberger <tlsteinberger167@gmail.com> (github.com/TylorS)",
   "license": "MIT",
   "dependencies": {
-    "@motorcycle/core": "^1.1.0",
-    "@motorcycle/dom": "^1.2.0",
-    "@motorcycle/history": "^2.0.0",
-    "history": "^2.0.0",
-    "most-subject": "^2.1.0"
+    "@motorcycle/core": "^1.2.1",
+    "@motorcycle/dom": "^1.4.0",
+    "@motorcycle/history": "^2.1.2",
+    "history": "^2.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^5.0.0",
