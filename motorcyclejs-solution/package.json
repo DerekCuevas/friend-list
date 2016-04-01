@@ -4,7 +4,7 @@
   "description": "A motorcyclejs solution to fried-list problem ",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist/ && mkdir dist/ && browserify -t babelify src/app.js -o dist/app.js",
+    "build": "rimraf dist/ && mkdirp dist/ && browserify -t babelify src/app.js -o dist/app.js",
     "server": "superstatic ./",
     "start": "npm run build && npm run server",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -28,6 +28,8 @@
     "eslint-plugin-cycle": "^1.0.2",
     "eslint-plugin-no-class": "^0.1.0",
     "http-server": "^0.9.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.5.2",
     "superstatic": "^4.0.1"
   }
 }
