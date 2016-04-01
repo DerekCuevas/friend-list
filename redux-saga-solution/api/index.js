@@ -1,3 +1,4 @@
+import { CANCEL } from 'redux-saga/utils';
 import friends from './friends';
 
 // mock api search
@@ -17,7 +18,19 @@ export default function search(query, callback) {
   });
 
   // setting a more realistic (random) timeout
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(results), Math.ceil(Math.random() * 250));
+  let tid
+  console.log(`api/search: STARTING QUERY '${query}'`)
+  const promise = new Promise((resolve) => {
+    tid = setTimeout(() => {
+      console.log(`api/search: RESOLVING QUERY '${query}'`)
+      resolve(results)
+    }, Math.ceil(Math.random() * 250)); // make the delay longer to make cancellation happen often
   });
+
+  promise[CANCEL] = () => {
+    console.log(`api/search: CANCELLING QUERY '${query}'`)
+    clearTimeout(tid)
+  }
+
+  return promise
 }

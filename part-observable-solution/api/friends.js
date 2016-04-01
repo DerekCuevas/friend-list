@@ -2,51 +2,51 @@ export default [
   {
     id: 1,
     name: 'Bruce Wayne',
-    username: '@Batman'
+    username: '@Batman',
   },
   {
     id: 2,
     name: 'Clark Kent',
-    username: '@Superman'
+    username: '@Superman',
   },
   {
     id: 3,
     name: 'Maz ‘Magnus’ Eisenhardt',
-    username: '@Magneto'
+    username: '@Magneto',
   },
   {
     id: 4,
     name: 'Reed Richards',
-    username: '@Mister-Fantastic'
+    username: '@Mister-Fantastic',
   },
   {
     id: 5,
     name: 'Charles Francis Xavier',
-    username: '@ProfessorX'
+    username: '@ProfessorX',
   },
   {
     id: 6,
     name: 'Lex Luthor',
-    username: '@LexLuthor'
+    username: '@LexLuthor',
   },
   {
     id: 7,
     name: 'Benjamin Grimm',
-    username: '@Thing'
+    username: '@Thing',
   },
   {
     id: 8,
     name: 'Walter Langkowski',
-    username: '@Sasquatch'
+    username: '@Sasquatch',
   },
   {
     id: 9,
     name: 'Andrew Nolan',
-    username: '@Ferro-Lad'
+    username: '@Ferro-Lad',
   },
   {
     id: 10,
     name: 'Jonathan Osterman',
-    username: '@Dr.Manhattan'
-  }
+    username: '@Dr.Manhattan',
+  },
 ];

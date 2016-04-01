@@ -1,31 +1,42 @@
-import { browserHistory } from 'react-router';
 import * as types from '../constants/actionTypes';
 import search from '../api';
 
 export function setQuery(query = '') {
   return {
     type: types.SET_QUERY,
-    query
+    query,
   };
 }
 
-export function setFriends(friends = []) {
+export function requestFriends() {
   return {
-    type: types.SET_FRIENDS,
-    friends
+    type: types.REQUEST_FRIENDS,
   };
 }
 
-export function fetchFriends() {
+export function receiveFriends(friends = []) {
+  return {
+    type: types.RECEIVE_FRIENDS,
+    friends,
+  };
+}
+
+export function fetchFriends(history) {
   return (dispatch, getState) => {
     const { query } = getState();
 
-    browserHistory.push({
-      query: { q: query || undefined }
-    });
+    dispatch(requestFriends());
 
     search(query).then(friends => {
-      dispatch(setFriends(friends));
+      const { query: currentQuery } = getState();
+
+      if (query === currentQuery) {
+        history.push({
+          query: { q: query || undefined },
+        });
+
+        dispatch(receiveFriends(friends));
+      }
     });
   };
 }

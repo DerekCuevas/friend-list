@@ -10,12 +10,12 @@ const propTypes = {
   dispatch: PropTypes.func.isRequired,
   location: PropTypes.object.isRequired,
   query: PropTypes.string,
-  friends: PropTypes.array
+  friends: PropTypes.array,
 };
 
 const defaultProps = {
   query: '',
-  friends: []
+  friends: [],
 };
 
 class FriendSearchView extends Component {
@@ -65,5 +65,5 @@ FriendSearchView.defaultProps = defaultProps;
 
 export default connect(({ query, friends }) => ({
   query,
-  friends
+  friends,
 }))(FriendSearchView);

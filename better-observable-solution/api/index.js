@@ -18,6 +18,7 @@ export default function search(query) {
 
   // setting a more realistic (random) timeout
   return new Promise((resolve) => {
+    // increase timeout to ~500 to see more responses being disposed
     setTimeout(() => resolve(results), Math.ceil(Math.random() * 250));
   });
 }
