@@ -15,7 +15,8 @@
     "@motorcycle/core": "^1.2.1",
     "@motorcycle/dom": "^1.4.0",
     "@motorcycle/history": "^2.1.2",
-    "history": "^2.0.1"
+    "history": "^2.0.1",
+    "most": "^0.18.8"
   },
   "devDependencies": {
     "babel-eslint": "^5.0.0",
