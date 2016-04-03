@@ -1,4 +1,4 @@
-# Friend List - Motorcycle.js Solution
+# Friend List - Cycle.js Solution
 
 This is an example [Cycle.js](https://github.com/cyclejs) solution, but using
 the [cycle-snabbdom](https://github.com/tylors/cycle-snabbdom) for rendering.
