@@ -19,7 +19,7 @@ This problem is harder than it first appears, actions must be managed in the cor
 - Handle the concurrent actions issue (see the [redux-saga-solution](redux-saga-solution/), the [cyclejs-solution](cyclejs-solution/), and the [better-observable-solution](better-observable-solution/)) - "If the user changes the query input while there is still a pending request from a previous query change, the current pending request should be cancelled and a new request should be made." - Thanks [@yelouafi](https://github.com/yelouafi)
 - Debounce the fetching of results by 100ms.
 - Log any state changing action with the newly changed state.
-- Add loading and/or error states (see the redux-meta-reducer [friend-list example](https://github.com/DerekCuevas/redux-meta-reducer/tree/master/examples/friend-list) example).
+- Add loading and/or error states (see the redux-meta-reducer [friend-list](https://github.com/DerekCuevas/redux-meta-reducer/tree/master/examples/friend-list) example).
 
 ## Solutions
 Solutions are in their own subdirectories above. Check out the README files in each of the subdirectories for example specific details.
