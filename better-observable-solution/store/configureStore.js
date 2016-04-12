@@ -3,13 +3,10 @@ import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import reducer from '../reducers';
 
-const createStoreWithMiddleware = applyMiddleware(
-  thunk,
-  createLogger()
-)(createStore);
+const middleware = [thunk, createLogger()];
 
 export default function configureStore(initialState) {
-  const store = createStoreWithMiddleware(reducer, initialState);
+  const store = createStore(reducer, initialState, applyMiddleware(...middleware));
 
   if (module.hot) {
     module.hot.accept('../reducers', () => {
@@ -17,5 +14,6 @@ export default function configureStore(initialState) {
       store.replaceReducer(nextReducer);
     });
   }
+
   return store;
 }
