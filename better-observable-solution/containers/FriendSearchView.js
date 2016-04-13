@@ -2,10 +2,9 @@ import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { setQuery } from '../actions';
-
 import SearchInput from '../components/SearchInput';
 import FriendList from '../components/FriendList';
+import { setQuery } from '../actions';
 
 const propTypes = {
   handleSearch: PropTypes.func.isRequired,
@@ -24,11 +23,14 @@ function FriendSearchView({ isFetching, query, friends, handleSearch }) {
   return (
     <div className="app">
       <SearchInput
-        value={query}
         placeholder="Search friends..."
+        value={query}
         handleSearch={handleSearch}
       />
-      <FriendList isFetching={isFetching} friends={friends} />
+      <FriendList
+        isFetching={isFetching}
+        friends={friends}
+      />
     </div>
   );
 }
@@ -36,14 +38,10 @@ function FriendSearchView({ isFetching, query, friends, handleSearch }) {
 FriendSearchView.propTypes = propTypes;
 FriendSearchView.defaultProps = defaultProps;
 
-function mapStateToProps({ isFetching, query, friends }) {
-  return { isFetching, query, friends };
-}
-
 function mapDispatchToProps(dispatch) {
   return {
     handleSearch: bindActionCreators(setQuery, dispatch),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FriendSearchView);
+export default connect(state => state, mapDispatchToProps)(FriendSearchView);

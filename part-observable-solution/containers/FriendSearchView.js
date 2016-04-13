@@ -1,10 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { setQuery } from '../actions';
-
 import SearchInput from '../components/SearchInput';
 import FriendList from '../components/FriendList';
+import { setQuery } from '../actions';
 
 const propTypes = {
   dispatch: PropTypes.func.isRequired,
@@ -63,7 +62,4 @@ class FriendSearchView extends Component {
 FriendSearchView.propTypes = propTypes;
 FriendSearchView.defaultProps = defaultProps;
 
-export default connect(({ query, friends }) => ({
-  query,
-  friends,
-}))(FriendSearchView);
+export default connect(state => state)(FriendSearchView);
