@@ -1,5 +1,5 @@
 # Friend List
-A non-trivial, yet simple, [React](https://facebook.github.io/react/) and [Redux](http://redux.js.org) example problem featuring [Cycle.js](http://cycle.js.org), [Motorcycle.js](https://github.com/motorcyclejs/core), and [Snabbdom](https://github.com/paldepind/snabbdom) solutions.
+A non-trivial (yet simple) front-end programming challenge. Featuring solutions in [React](https://facebook.github.io/react/), [Redux](http://redux.js.org), [Redux-Saga](https://github.com/yelouafi/redux-saga), [Cycle.js](http://cycle.js.org), [Motorcycle.js](https://github.com/motorcyclejs/core) and [Snabbdom](https://github.com/paldepind/snabbdom).
 
 ![alt tag](friendlist.gif)
 
