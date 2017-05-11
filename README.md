@@ -1,6 +1,8 @@
 # Friend List
 A non-trivial (yet simple) front-end programming challenge. Featuring solutions in [React](https://facebook.github.io/react/), [Redux](http://redux.js.org), [Redux-Saga](https://github.com/yelouafi/redux-saga), [Cycle.js](http://cycle.js.org), [Motorcycle.js](https://github.com/motorcyclejs/core) and [Snabbdom](https://github.com/paldepind/snabbdom).
 
+Check out the Elm solution [here](https://github.com/DerekCuevas/friend-list-elm)!
+
 ![alt tag](friendlist.gif)
 
 ## The Problem
